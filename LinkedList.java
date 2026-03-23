@@ -4,8 +4,8 @@ class LinkedList {
     Node head;
 
     public void insert(int data) {
-        Node node = new Node();
-        node.data = data;
+        Node node = new Node(data);
+    
 
         if (head == null) {
             head = node;
@@ -20,8 +20,7 @@ class LinkedList {
     }
 
     public void insertAtStart(int data) {
-        Node node = new Node();
-        node.data = data;
+        Node node = new Node(data);
 
         node.next = head;
         head = node;
@@ -39,8 +38,8 @@ class LinkedList {
             return;
         }
 
-        Node node = new Node();
-        node.data = data;
+        Node node = new Node(data);
+
 
         Node temp = head;
 
@@ -173,4 +172,9 @@ class LinkedList {
 class Node {
     int data;
     Node next;
+
+    public Node(int data) {
+        this.data=data;
+    }
+    
 }
