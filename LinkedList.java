@@ -1,3 +1,4 @@
+import java.util.*;
 class LinkedList {
 
     Node head;
@@ -103,26 +104,69 @@ class LinkedList {
     }
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
         LinkedList list = new LinkedList();
 
-        list.insert(5);
-        list.insert(1);
-        list.insert(4);
-        list.insert(3);
+        System.out.println("Enter the Size of the Linked List: ");
+        int n= in.nextInt();
 
-        list.insertAtStart(0);
-        list.show();
+        for(int i=0;i<n;i++){
+            System.out.println("Enter the "+(i+1)+ " Data: ");
+            int data=in.nextInt();
+            list.insert(data);
+        }
 
-        list.insertAt(-1, 18);
-        list.insertAt(9, 7);
-        list.show();
 
-        list.deleteAt(1);
-        list.deleteAt(5);
+        int choice=-1;
+        while(choice!= 0){
+            System.out.println("Enter the choice:");
+            System.out.println("1. Inset at Start");
+            System.out.println("2. Inset at Position");
+            System.out.println("3. Inset at End");
+            System.out.println("4. Delete at Position");
+            System.out.println("5. Display List");
+            System.out.println("Enter 0 to Exit");
+            choice=in.nextInt();
+            int data,pos;
+            switch(choice){
+                
+                case 1:
+                    System.out.println("Enter Data to Insert: ");
+                    data=in.nextInt();
+                    list.insertAtStart(data);
+                    System.out.println(data+" Inserted Succesfully!");
+                    break;
+                case 2:
+                    System.out.println("Enter the Position to insert: ");
+                    pos=in.nextInt();
+                    System.out.println("Enter Data to Insert: ");
+                    data=in.nextInt();
+                    list.insertAt(pos,data);
+                    System.out.println(data+" Inserted Succesfully!");
 
-        list.show();
-        System.out.println(list.getSize());
+                    break;
+                case 3:
+                    System.out.println("Enter Data to Insert: ");
+                    data=in.nextInt();
+                    list.insert(data);
+                    System.out.println(data+" Inserted Succesfully!");
+                    break;
+                case 4: 
+                    System.out.println("Enter the Position to Delete: ");
+                    pos=in.nextInt();
+                    list.deleteAt(pos);
+                    System.out.println(pos+" th Position Deleted Successfully!");
+                    break;
+                case 5:
+                    list.show();
+                case 0:
+                    System.out.println("Game Ended!");
+                    break;
+
+            }
+        }
+
     }
 }
 
