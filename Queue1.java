@@ -1,4 +1,4 @@
-class Queue {
+class Queue1 {
 
     int[] queue = new int[5];
     int front = 0;
@@ -58,7 +58,7 @@ class Queue {
 
     public static void main(String[] args) {
 
-        Queue q = new Queue();
+        Queue1 q = new Queue1();
 
         q.dequeue();
 

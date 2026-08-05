@@ -1,5 +1,5 @@
 import java.util.*;
-class LinkedList {
+class LinkedList2 {
 
     Node head;
 
@@ -105,7 +105,7 @@ class LinkedList {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        LinkedList list = new LinkedList();
+        LinkedList2 list = new LinkedList2();
 
         System.out.println("Enter the Size of the Linked List: ");
         int n= in.nextInt();
